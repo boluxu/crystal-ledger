@@ -380,8 +380,7 @@ const ICON = {
 };
 
 /* ================= cabinet ================= */
-const PRESET_TAGS = ['白水晶','黄水晶','紫水晶','粉水晶','茶水晶','发晶','手串','吊坠','摆件','原石','定制款'];
-function allTags(){ const s=new Set(PRESET_TAGS); [...items].sort((a,b)=>a.createdAt-b.createdAt).forEach(i=>(i.tags||[]).forEach(t=>s.add(t))); return [...s]; }
+function allTags(){ const s=new Set(); [...items].sort((a,b)=>a.createdAt-b.createdAt).forEach(i=>(i.tags||[]).forEach(t=>s.add(t))); return [...s]; }
 function filtered(){
   const q = S.q.trim().toLowerCase();
   let list = items.filter(i => i.status === S.seg);
